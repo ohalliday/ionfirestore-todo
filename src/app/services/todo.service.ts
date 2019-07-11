@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 export interface Todo {
+  id?: string;
   task: string;
   priority: number;
   createdAt: number;
