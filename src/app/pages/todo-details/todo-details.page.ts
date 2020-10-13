@@ -62,4 +62,18 @@ export class TodoDetailsPage implements OnInit {
       });
     }
   }
+
+  async removeTodo() {
+    const loading = await this.loadingController.create({
+      message: 'Removing Todo..'
+    });
+    await loading.present();
+
+    if (this.todoId) {
+      this.todoService.removeTodo(this.todoId).then(() => {
+        loading.dismiss();
+        this.nav.navigateBack('home');
+      });
+    }
+  }
 }

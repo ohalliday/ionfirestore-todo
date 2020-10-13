@@ -51,7 +51,7 @@ export class TodoService {
     return this.todosCollection.add(todo);
   }
 
-  removeTodo(id) {
+  removeTodo(id: string) {
     return this.todosCollection.doc(id).delete();
   }
 }
